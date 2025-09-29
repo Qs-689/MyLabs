@@ -231,6 +231,8 @@
                 android:layout_margin="2dp" />
         </LinearLayout>
     </LinearLayout>
-    
+    <!-- 底部导航栏 -->
+    <include layout="@layout/bottom_navigation"/>
+
 
 </LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@android:color/darker_gray">
+
+    <Button
+        android:id="@+id/btn_activity1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="界面一"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_activity2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="界面二"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_activity3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="界面三"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_activity4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="界面四"
+        android:textAllCaps="false"/>
+
+</LinearLayout>
