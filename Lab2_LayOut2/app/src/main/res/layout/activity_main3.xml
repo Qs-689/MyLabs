@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFFFFF"
-    android:padding="8dp">
+    android:padding="16dp">
 
     <!-- 主标题 -->
     <TextView
