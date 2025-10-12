@@ -15,15 +15,15 @@
 - **项目管理**: Gradle
 
 ## 📁项目结构
-├── app/
-│ ├── src/main/java/ # Java源代码目录
-│ ├── src/main/res/ # 资源文件目录（布局、图片、字符串等）
-│ └── build.gradle # Module级别的Gradle构建脚本
-├── gradle/
-│ └── wrapper/ # Gradle Wrapper文件，用于统一构建环境
-├── build.gradle # Project级别的Gradle构建脚本
-├── settings.gradle # 项目设置文件，定义包含的模块
-└── .gitignore # Git忽略规则文件
+├── app/  
+│ ├── src/main/java/ # Java源代码目录  
+│ ├── src/main/res/ # 资源文件目录（布局、图片、字符串等）  
+│ └── build.gradle # Module级别的Gradle构建脚本  
+├── gradle/  
+│ └── wrapper/ # Gradle Wrapper文件，用于统一构建环境  
+├── build.gradle # Project级别的Gradle构建脚本  
+├── settings.gradle # 项目设置文件，定义包含的模块  
+└── .gitignore # Git忽略规则文件  
 ## 环境配置
 
 1.  **Android Studio**: 推荐使用最新稳定版。
@@ -80,35 +80,35 @@ git clone https://github.com/QS-689/Mylabs.git
 - **界面跳转**：通过导航按钮实现多界面导航功能
 
 ## 📁 项目结构
-Lab2_LayoutLearning/
-├── app/
-│ ├── manifests/
-│ │ └── AndroidManifest.xml
-│ ├── java/
-│ │ └── com/example/lab2_layout/
-│ │ ├── MainActivity1.java
-│ │ ├── MainActivity2.java
-│ │ ├── MainActivity3.java
-│ │ └── MainActivity4.java
-│ └── res/
-│ ├── drawable/
-│ │ ├── double_arrows.png
-│ │ ├── space_station_icon.png
-│ │ ├── rocket_icon.png
-│ │ ├── rover_icon.png
-│ │ └── single_arrow.png
-│ ├── layout/
-│ │ ├── activity_main.xml
-│ │ ├── activity_main2.xml
-│ │ ├── activity_main3.xml
-│ │ ├── activity_main4.xml
-│ │ └── bottom_navigation.xml
-│ └── values/
-├── gradle/
-│ └── wrapper/
-├── build.gradle
-├── settings.gradle
-└── .gitignore
+Lab2_LayoutLearning/  
+├── app/  
+│ ├── manifests/  
+│ │ └── AndroidManifest.xml  
+│ ├── java/  
+│ │ └── com/example/lab2_layout/  
+│ │ ├── MainActivity1.java  
+│ │ ├── MainActivity2.java  
+│ │ ├── MainActivity3.java  
+│ │ └── MainActivity4.java  
+│ └── res/  
+│ ├── drawable/  
+│ │ ├── double_arrows.png  
+│ │ ├── space_station_icon.png  
+│ │ ├── rocket_icon.png  
+│ │ ├── rover_icon.png  
+│ │ └── single_arrow.png  
+│ ├── layout/  
+│ │ ├── activity_main.xml  
+│ │ ├── activity_main2.xml  
+│ │ ├── activity_main3.xml  
+│ │ ├── activity_main4.xml  
+│ │ └── bottom_navigation.xml  
+│ └── values/  
+├── gradle/  
+│ └── wrapper/  
+├── build.gradle  
+├── settings.gradle  
+└── .gitignore  
 ## 🎨 布局实现
 
 ### 📏 线性布局 (MainActivity1)
