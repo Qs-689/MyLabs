@@ -37,7 +37,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Space Stations"
+                android:text="@string/space_stations"
                 android:textColor="#666666"
                 android:textSize="12sp"
                 android:layout_marginTop="4dp" />
@@ -62,7 +62,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Flights"
+                android:text="@string/flights"
                 android:textColor="#333333"
                 android:textSize="12sp"
                 android:layout_marginTop="4dp" />
@@ -86,7 +86,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rovers"
+                android:text="@string/rovers"
                 android:textColor="#666666"
                 android:textSize="12sp"
                 android:layout_marginTop="4dp" />
@@ -100,7 +100,7 @@
         android:layout_height="150dp"
         android:background="#4CAF50"
         android:gravity="center"
-        android:text="DCA"
+        android:text="@string/dca"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -123,7 +123,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top_navigation"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        tools:ignore="HardcodedText" />
 
     <!-- 箭头图标 -->
     <ImageView
@@ -136,50 +137,55 @@
         app:layout_constraintTop_toTopOf="@+id/dca_label"
         app:layout_constraintBottom_toBottomOf="@+id/dca_label" />
 
-    <!-- One Way 文本 -->
-    <TextView
-        android:id="@+id/one_way_text"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:gravity="center_vertical"
-        android:text="  One Way               "
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:background="#EE9A00"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dca_label"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp" />
 
-    <!-- Traveller 文本 -->
-    <TextView
-        android:id="@+id/traveller_text"
+    <CheckBox
+        android:id="@+id/one_way_button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#EE9A00"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:text="@string/one_way"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dca_label" />
+
+    <Button
+        android:id="@+id/traveller_button"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:gravity="center_vertical"
-        android:text="  1 Traveller "
+        android:text="@string/_1_traveller"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
         android:background="#EE9A00"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/one_way_text"
+        app:layout_constraintTop_toBottomOf="@+id/one_way_button"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp" />
 
     <!-- 宇宙图案 -->
+
+    <!-- 火箭图标 -->
+
     <ImageView
         android:id="@+id/galaxy_icon"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/galaxy"
-        app:layout_constraintTop_toBottomOf="@+id/traveller_text"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/depart_button"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp" />
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/arrow_icon"
+        app:layout_constraintVertical_bias="0.4" />
 
-    <!-- 火箭图标 -->
     <ImageView
         android:id="@+id/rocket_icon"
         android:layout_width="40dp"
@@ -206,7 +212,7 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:background="#4CAF50"
-        android:text="DEPART"
+        android:text="@string/depart"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"

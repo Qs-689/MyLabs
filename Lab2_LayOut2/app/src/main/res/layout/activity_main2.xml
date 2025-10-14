@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Android布局实验——表格布局"
+        android:text="@string/android"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -34,7 +34,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hello TableLayout"
+                android:text="@string/hello_tablelayout"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -51,7 +51,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Open..."
+                android:text="@string/open"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
@@ -59,7 +59,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ctrl-O"
+                android:text="@string/ctrl_o"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:gravity="end" />
@@ -74,7 +74,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Save..."
+                android:text="@string/save"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
@@ -82,7 +82,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ctrl-S"
+                android:text="@string/ctrl_s"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:gravity="end" />
@@ -97,7 +97,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Save As..."
+                android:text="@string/save_as"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
@@ -105,7 +105,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ctrl-Shift-S"
+                android:text="@string/ctrl_shift_s"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:gravity="end" />
@@ -129,7 +129,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Import..."
+                android:text="@string/importd"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
@@ -152,7 +152,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Export..."
+                android:text="@string/export"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
@@ -160,7 +160,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ctrl-E"
+                android:text="@string/ctrl_e"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:gravity="end" />
@@ -184,7 +184,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Quit"
+                android:text="@string/quit"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
