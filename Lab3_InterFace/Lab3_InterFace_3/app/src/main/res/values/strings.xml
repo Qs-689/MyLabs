@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Lab3_InterFace_3</string>
+    <string name="menutest">MenuTest</string>
+    <string name="n_n">用于测试的内容\n\n这是一段用于测试菜单功能的示例文本。您可以通过菜单调整字体大小和颜色。</string>
+    <string name="_16">当前设置：字体大小-中(16号)，颜色-黑色</string>
+    <string name="size">字体大小</string>
+    <string name="small">小 (10号字)</string>
+    <string name="center">中 (16号字)</string>
+    <string name="big">大 (20号字)</string>
+    <string name="normalmenu">普通菜单项</string>
+    <string name="color">字体颜色</string>
+    <string name="red">红色</string>
+    <string name="black">黑色</string>
+    <string name="blue">蓝色</string>
+    <string name="green">绿色</string>
+    <string name="purple">紫色</string>
+    <string name="orange">橙色</string>
 </resources>
