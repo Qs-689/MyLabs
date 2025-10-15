@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Lab3_InterFace_1</string>
+    <string name="android_listview">Android ListView的用法</string>
+    <string name="dwmc">动物名称</string>
+    <string name="dwpc">动物图片</string>
 </resources>

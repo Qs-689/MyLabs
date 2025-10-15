@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Lab3_InterFace_2</string>
+    <string name="android_app">Android APP</string>
+    <string name="dianji">点击下方按钮打开登录框</string>
+    <string name="android_app1">ANDROID APP</string>
+    <string name="zh">账号</string>
+    <string name="srzh">请输入账号</string>
+    <string name="password">密码</string>
+    <string name="srpsd">请输入密码</string>
+    <string name="cancel">Cancel</string>
+    <string name="sign_in">Sign in</string>
 </resources>

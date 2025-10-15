@@ -16,7 +16,7 @@
         android:layout_weight="1"
         android:textSize="20sp"
         android:textColor="#000000"
-        android:text="动物名称"
+        android:text="@string/dwmc"
         android:paddingLeft="8dp" />
 
     <!-- 动物图片 -->
@@ -26,6 +26,6 @@
         android:layout_height="50dp"
         android:src="@drawable/lion"
         android:scaleType="centerCrop"
-        android:contentDescription="动物图片" />
+        android:contentDescription="@string/dwpc" />
 
 </LinearLayout>
