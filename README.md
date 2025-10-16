@@ -80,7 +80,7 @@ git clone https://github.com/QS-689/Mylabs.git
 - **界面跳转**：通过导航按钮实现多界面导航功能
 
 ## 📁 项目结构
-Lab2_LayoutLearning/  
+Lab2_LayOut/  
 ├── app/  
 │ ├── manifests/  
 │ │ └── AndroidManifest.xml  
@@ -216,10 +216,16 @@ git clone https://github.com/QS-689/Mylabs.git
 - **项目管理**: Gradle
 
 ## 📁 项目结构
+Lab3_InterFace/  
+├── Lab3_InterFace_1/  
+├── Lab3_InterFace_2/    
+├── Lab3_InterFace_3/  
+├── Lab3_InterFace_4/  
 
 ## 🔧 详细实现说明
 ### 任务一：ListView的实现
-java
+
+```Java
 // 使用SimpleAdapter创建列表
 SimpleAdapter adapter = new SimpleAdapter(this, data, 
     R.layout.list_item, 
@@ -236,8 +242,9 @@ listView.setOnItemClickListener((parent, view, position, id) -> {
     // 发送通知
     sendNotification(selectedItem);
 });
+```
 ### 任务二：自定义AlertDialog
-java
+```Java
 // 加载自定义布局
 View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_custom, null);
 
@@ -253,8 +260,9 @@ builder.setView(dialogView)
 
 AlertDialog dialog = builder.create();
 dialog.show();
+```
 ### 任务三：XML菜单系统
-xml
+```xml
 <!-- res/menu/main_menu.xml -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/menu_font_size" android:title="字体大小">
@@ -272,9 +280,9 @@ xml
         </menu>
     </item>
 </menu>
-
+```
 ### 任务四：ActionMode上下文菜单
-java
+```Java
 listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
 listView.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
     @Override
@@ -289,6 +297,7 @@ listView.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
         return true;
     }
 });
+```
 ## ⚙️ 环境配置
 1.  **Android Studio**: 推荐使用最新稳定版
 
