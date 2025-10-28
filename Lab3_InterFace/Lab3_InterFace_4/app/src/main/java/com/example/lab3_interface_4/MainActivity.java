@@ -1,6 +1,5 @@
 package com.example.lab3_interface_4;
 
-
 import android.os.Bundle;
 import android.view.ActionMode;
 import android.view.Menu;
@@ -12,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,17 +40,17 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
-                // 当选择状态改变时调用
-                adapter.toggleSelection(position);
+                // 更新适配器状态
+                adapter.setSelected(position, checked);
                 updateActionModeTitle(mode);
             }
 
             @Override
             public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-                // 创建ActionMode
                 mode.getMenuInflater().inflate(R.menu.context_menu, menu);
                 actionMode = mode;
                 adapter.setActionMode(true);
+                updateActionModeTitle(mode);
                 return true;
             }
 
@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-                // 处理菜单项点击
                 int id = item.getItemId();
 
                 if (id == R.id.menu_delete) {
@@ -73,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 } else if (id == R.id.menu_select_all) {
                     selectAllItems();
-                    updateActionModeTitle(mode);
                     return true;
                 }
 
@@ -82,20 +80,21 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onDestroyActionMode(ActionMode mode) {
-                // ActionMode销毁时调用
                 adapter.setActionMode(false);
-                adapter.clearSelection();
                 actionMode = null;
             }
         });
 
-        // 设置列表项点击监听
+        // 修改点击监听器
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (actionMode != null) {
-                    // 在ActionMode中，点击即选择/取消选择
-                    listView.setItemChecked(position, !listView.isItemChecked(position));
+                    // 在多选模式下，切换选择状态
+                    boolean newState = !adapter.isSelected(position);
+                    adapter.setSelected(position, newState);
+                    listView.setItemChecked(position, newState);
+                    updateActionModeTitle(actionMode);
                 } else {
                     // 普通模式下显示项目内容
                     Toast.makeText(MainActivity.this,
@@ -114,20 +113,28 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateActionModeTitle(ActionMode mode) {
         int selectedCount = adapter.getSelectedCount();
-        if (selectedCount > 0) {
-            mode.setTitle(selectedCount + " selected");
-        } else {
+        if (selectedCount == 0) {
             mode.setTitle("请选择项目");
+        } else {
+            mode.setTitle(selectedCount + " selected");
         }
     }
 
     private void deleteSelectedItems() {
         List<Integer> selectedPositions = adapter.getSelectedPositions();
 
-        // 从大到小删除，避免索引变化问题
-        for (int i = selectedPositions.size() - 1; i >= 0; i--) {
-            int position = selectedPositions.get(i);
-            dataList.remove(position);
+        if (selectedPositions.isEmpty()) {
+            Toast.makeText(this, "没有选中的项目", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // 从大到小排序，避免删除时索引变化
+        Collections.sort(selectedPositions, Collections.reverseOrder());
+
+        for (int position : selectedPositions) {
+            if (position < dataList.size()) {
+                dataList.remove(position);
+            }
         }
 
         adapter.notifyDataSetChanged();
@@ -136,18 +143,32 @@ public class MainActivity extends AppCompatActivity {
 
     private void shareSelectedItems() {
         List<Integer> selectedPositions = adapter.getSelectedPositions();
-        StringBuilder shareText = new StringBuilder("分享内容:\n");
 
+        if (selectedPositions.isEmpty()) {
+            Toast.makeText(this, "没有选中的项目", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        StringBuilder shareText = new StringBuilder("分享内容:\n");
         for (int position : selectedPositions) {
-            shareText.append(dataList.get(position)).append("\n");
+            if (position < dataList.size()) {
+                shareText.append(dataList.get(position)).append("\n");
+            }
         }
 
         Toast.makeText(this, shareText.toString(), Toast.LENGTH_LONG).show();
     }
 
     private void selectAllItems() {
-        for (int i = 0; i < dataList.size(); i++) {
+        adapter.selectAll();
+
+        // 更新ListView的选择状态
+        for (int i = 0; i < adapter.getCount(); i++) {
             listView.setItemChecked(i, true);
+        }
+
+        if (actionMode != null) {
+            updateActionModeTitle(actionMode);
         }
     }
 }

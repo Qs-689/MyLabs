@@ -3,4 +3,6 @@
     <string name="menu_delete">删除</string>
     <string name="menu_share">分享</string>
     <string name="menu_select_all">全选</string>
+    <string name="text1">通过长按选取列表</string>
+    <string name="liebiao">列表项</string>
 </resources>
