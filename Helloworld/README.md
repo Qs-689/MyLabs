@@ -57,9 +57,9 @@ git clone https://github.com/QS-689/Mylabs.git
 
   ## 实验结果
 
-![image-20251118145901140](C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118145901140.png)
+![image](https://github.com/Qs-689/MyLabs/blob/master/Helloworld/lab1_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20145837.png)
 
-![image-20251118150013824](C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118150013824.png)
+![image](https://github.com/Qs-689/MyLabs/blob/master/Helloworld/lab1_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20150009.png)
 
 ## 📚实验总结
 
