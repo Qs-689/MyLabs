@@ -43,8 +43,7 @@ Lab2_LayOut/
 
 #### 运行项目
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162937551.png" alt="image-20251118162937551" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20162933.png)
 ### 📏 线性布局 (MainActivity1)
 
 - **布局文件**：activity_main.xml
@@ -53,7 +52,7 @@ Lab2_LayOut/
 #### 按下下方导航栏“界面一”按钮
 
 <img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118163027604.png" alt="image-20251118163027604" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20162933.png)
 ### 📊 表格布局 (MainActivity2)
 
 - **布局文件**：activity_main2.xml
@@ -62,7 +61,7 @@ Lab2_LayOut/
 #### 按下下方导航栏“界面二”按钮
 
 <img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118163113265.png" alt="image-20251118163113265" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20163112.png)
 ### 🔗 约束布局1 (MainActivity3)
 
 - **布局文件**：activity_main3.xml
@@ -71,7 +70,7 @@ Lab2_LayOut/
 #### 按下下方导航栏“界面三”按钮
 
 <img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118163137112.png" alt="image-20251118163137112" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20163129.png)
 ### 🔗 约束布局2 (MainActivity4)
 
 - **布局文件**：activity_main4.xml
@@ -80,7 +79,7 @@ Lab2_LayOut/
 #### 按下下方导航栏“界面四”按钮
 
 <img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118163159603.png" alt="image-20251118163159603" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20163156.png)
 ## ⚙️ 环境配置
 
 - **Android Studio**：推荐使用最新稳定版
