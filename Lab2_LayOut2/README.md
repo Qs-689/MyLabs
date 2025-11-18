@@ -51,7 +51,6 @@ Lab2_LayOut/
 
 #### 按下下方导航栏“界面一”按钮
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118163027604.png" alt="image-20251118163027604" style="zoom:50%;" />
 ![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20162933.png)
 ### 📊 表格布局 (MainActivity2)
 
