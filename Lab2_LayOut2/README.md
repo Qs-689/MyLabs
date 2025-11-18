@@ -60,7 +60,6 @@ Lab2_LayOut/
 
 #### 按下下方导航栏“界面二”按钮
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118163113265.png" alt="image-20251118163113265" style="zoom:50%;" />
 ![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20163112.png)
 ### 🔗 约束布局1 (MainActivity3)
 
@@ -69,7 +68,6 @@ Lab2_LayOut/
 
 #### 按下下方导航栏“界面三”按钮
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118163137112.png" alt="image-20251118163137112" style="zoom:50%;" />
 ![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20163129.png)
 ### 🔗 约束布局2 (MainActivity4)
 
@@ -78,7 +76,6 @@ Lab2_LayOut/
 
 #### 按下下方导航栏“界面四”按钮
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118163159603.png" alt="image-20251118163159603" style="zoom:50%;" />
 ![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20163156.png)
 ## ⚙️ 环境配置
 
