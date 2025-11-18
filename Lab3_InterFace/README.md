@@ -74,17 +74,16 @@ listView.setOnItemClickListener((parent, view, position, id) -> {
 });
 ```
 #### 项目运行
-
-<img src="C:\Users\16549\Pictures\Screenshots\屏幕截图 2025-11-18 151955.png" alt="屏幕截图 2025-11-18 151955" style="zoom:50%;" />
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20151955.png)
 
 #### 点击列表
 
-<img src="C:\Users\16549\Pictures\Screenshots\屏幕截图 2025-11-18 152330.png" alt="屏幕截图 2025-11-18 152330" style="zoom:50%;" />
 
-<img src="C:\Users\16549\Pictures\Screenshots\屏幕截图 2025-11-18 152352.png" alt="屏幕截图 2025-11-18 152352" style="zoom:50%;" />
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20152330.png)
 
-<img src="C:\Users\16549\Pictures\Screenshots\屏幕截图 2025-11-18 152438.png" alt="屏幕截图 2025-11-18 152438" style="zoom:50%;" />
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20152352.png)
 
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20152438.png)
 ### 任务二：自定义AlertDialog
 
 ```Java
@@ -106,24 +105,19 @@ dialog.show();
 ```
 #### 项目运行
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118160947302.png" alt="image-20251118160947302" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20160939.png)
 #### 点击按钮
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161113977.png" alt="image-20251118161113977" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161112.png)
 #### 点击账号输入框
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161151640.png" alt="image-20251118161151640" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161149.png)
 #### 点击密码输入框
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161229446.png" alt="image-20251118161229446" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161226.png)
 #### 点击“Sign In”
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161329602.png" alt="image-20251118161329602" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161324.png)
 ### 任务三：XML菜单系统
 
 ```xml
@@ -147,30 +141,29 @@ dialog.show();
 ```
 #### 运行项目
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161524254.png" alt="image-20251118161524254" style="zoom:50%;" />
 
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161523.png)
 #### 点击右上角菜单
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161603732.png" alt="image-20251118161603732" style="zoom:50%;" />
 
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161601.png)
 #### 调整字体
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161630747.png" alt="image-20251118161630747" style="zoom:50%;" />
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161652958.png" alt="image-20251118161652958" style="zoom:50%;" />
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161628.png)
 
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161650.png)
 #### 点击普通菜单项
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161722838.png" alt="image-20251118161722838" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161718.png)
 #### 调整字体颜色
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161754291.png" alt="image-20251118161754291" style="zoom:50%;" />
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161812071.png" alt="image-20251118161812071" style="zoom:50%;" />
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161750.png)
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161829505.png" alt="image-20251118161829505" style="zoom:50%;" />
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161811.png)
 
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161824.png)
 ### 任务四：ActionMode上下文菜单
 
 ```Java
@@ -191,28 +184,22 @@ listView.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
 ```
 #### 运行项目
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162511059.png" alt="image-20251118162511059" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20162510.png)
 #### 长按某列表
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162602458.png" alt="image-20251118162602458" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20162551.png)
 #### 多选列表
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162634409.png" alt="image-20251118162634409" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20162630.png)
 #### 按删除按钮
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162710808.png" alt="image-20251118162710808" style="zoom: 50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20162708.png)
 #### 长按某列表并全选
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162745322.png" alt="image-20251118162745322" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20162741.png)
 #### 按删除按钮
 
-<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162804849.png" alt="image-20251118162804849" style="zoom:50%;" />
-
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20162802.png)
 ## ⚙️ 环境配置
 
 1.  **Android Studio**: 推荐使用最新稳定版
