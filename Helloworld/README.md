@@ -48,10 +48,18 @@ git clone https://github.com/QS-689/Mylabs.git
 本项目使用标准的Android `.gitignore` 规则，旨在避免将自动生成的文件、缓存和敏感信息提交到版本库。主要忽略的文件和目录包括：
 
 - `/build` - 编译生成目录
+
 - `/.idea` - IDE配置工作区
+
 - `*.iml` - Module配置文件
+
 - `/local.properties` - 包含本地SDK路径的配置文件（可能包含用户特定的路径）
 
+  ## 实验结果
+
+![image-20251118145901140](C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118145901140.png)
+
+![image-20251118150013824](C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118150013824.png)
 
 ## 📚实验总结
 

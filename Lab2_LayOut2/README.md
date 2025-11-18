@@ -38,25 +38,51 @@ Lab2_LayOut/
 ├── build.gradle  
 ├── settings.gradle  
 └── .gitignore  
+
 ## 🎨 布局实现
 
+#### 运行项目
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162937551.png" alt="image-20251118162937551" style="zoom:50%;" />
+
 ### 📏 线性布局 (MainActivity1)
+
 - **布局文件**：activity_main.xml
 - **特点**：垂直或水平排列子视图
 
+#### 按下下方导航栏“界面一”按钮
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118163027604.png" alt="image-20251118163027604" style="zoom:50%;" />
+
 ### 📊 表格布局 (MainActivity2)
+
 - **布局文件**：activity_main2.xml
 - **特点**：表格形式排列，支持行列合并
 
+#### 按下下方导航栏“界面二”按钮
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118163113265.png" alt="image-20251118163113265" style="zoom:50%;" />
+
 ### 🔗 约束布局1 (MainActivity3)
+
 - **布局文件**：activity_main3.xml
 - **特点**：通过约束关系定位视图
 
+#### 按下下方导航栏“界面三”按钮
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118163137112.png" alt="image-20251118163137112" style="zoom:50%;" />
+
 ### 🔗 约束布局2 (MainActivity4)
+
 - **布局文件**：activity_main4.xml
 - **特点**：复杂的约束关系，链式布局
 
+#### 按下下方导航栏“界面四”按钮
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118163159603.png" alt="image-20251118163159603" style="zoom:50%;" />
+
 ## ⚙️ 环境配置
+
 - **Android Studio**：推荐使用最新稳定版
 - **Git**：确保已安装并配置全局用户信息
 

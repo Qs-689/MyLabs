@@ -73,7 +73,20 @@ listView.setOnItemClickListener((parent, view, position, id) -> {
     sendNotification(selectedItem);
 });
 ```
+#### 项目运行
+
+<img src="C:\Users\16549\Pictures\Screenshots\屏幕截图 2025-11-18 151955.png" alt="屏幕截图 2025-11-18 151955" style="zoom:50%;" />
+
+#### 点击列表
+
+<img src="C:\Users\16549\Pictures\Screenshots\屏幕截图 2025-11-18 152330.png" alt="屏幕截图 2025-11-18 152330" style="zoom:50%;" />
+
+<img src="C:\Users\16549\Pictures\Screenshots\屏幕截图 2025-11-18 152352.png" alt="屏幕截图 2025-11-18 152352" style="zoom:50%;" />
+
+<img src="C:\Users\16549\Pictures\Screenshots\屏幕截图 2025-11-18 152438.png" alt="屏幕截图 2025-11-18 152438" style="zoom:50%;" />
+
 ### 任务二：自定义AlertDialog
+
 ```Java
 // 加载自定义布局
 View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_custom, null);
@@ -91,7 +104,28 @@ builder.setView(dialogView)
 AlertDialog dialog = builder.create();
 dialog.show();
 ```
+#### 项目运行
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118160947302.png" alt="image-20251118160947302" style="zoom:50%;" />
+
+#### 点击按钮
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161113977.png" alt="image-20251118161113977" style="zoom:50%;" />
+
+#### 点击账号输入框
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161151640.png" alt="image-20251118161151640" style="zoom:50%;" />
+
+#### 点击密码输入框
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161229446.png" alt="image-20251118161229446" style="zoom:50%;" />
+
+#### 点击“Sign In”
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161329602.png" alt="image-20251118161329602" style="zoom:50%;" />
+
 ### 任务三：XML菜单系统
+
 ```xml
 <!-- res/menu/main_menu.xml -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
@@ -111,7 +145,34 @@ dialog.show();
     </item>
 </menu>
 ```
+#### 运行项目
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161524254.png" alt="image-20251118161524254" style="zoom:50%;" />
+
+#### 点击右上角菜单
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161603732.png" alt="image-20251118161603732" style="zoom:50%;" />
+
+#### 调整字体
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161630747.png" alt="image-20251118161630747" style="zoom:50%;" />
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161652958.png" alt="image-20251118161652958" style="zoom:50%;" />
+
+#### 点击普通菜单项
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161722838.png" alt="image-20251118161722838" style="zoom:50%;" />
+
+#### 调整字体颜色
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161754291.png" alt="image-20251118161754291" style="zoom:50%;" />
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161812071.png" alt="image-20251118161812071" style="zoom:50%;" />
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118161829505.png" alt="image-20251118161829505" style="zoom:50%;" />
+
 ### 任务四：ActionMode上下文菜单
+
 ```Java
 listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
 listView.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
@@ -128,7 +189,32 @@ listView.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
     }
 });
 ```
+#### 运行项目
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162511059.png" alt="image-20251118162511059" style="zoom:50%;" />
+
+#### 长按某列表
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162602458.png" alt="image-20251118162602458" style="zoom:50%;" />
+
+#### 多选列表
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162634409.png" alt="image-20251118162634409" style="zoom:50%;" />
+
+#### 按删除按钮
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162710808.png" alt="image-20251118162710808" style="zoom: 50%;" />
+
+#### 长按某列表并全选
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162745322.png" alt="image-20251118162745322" style="zoom:50%;" />
+
+#### 按删除按钮
+
+<img src="C:\Users\16549\AppData\Roaming\Typora\typora-user-images\image-20251118162804849.png" alt="image-20251118162804849" style="zoom:50%;" />
+
 ## ⚙️ 环境配置
+
 1.  **Android Studio**: 推荐使用最新稳定版
 
 2.  **Android SDK**: API 26 (Android 8.0) 或更高
