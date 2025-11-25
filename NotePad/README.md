@@ -500,6 +500,7 @@ private void filterByCategory(String category) {
 <img width="1080" height="2400" alt="Screenshot_20251125_201205" src="https://github.com/user-attachments/assets/6ed3932d-d774-4cc2-bea5-5a3af6a438cd" />
 <img width="1080" height="2400" alt="Screenshot_20251125_201224" src="https://github.com/user-attachments/assets/981e3971-57c9-4f0c-91b8-3cc0ad613883" />
 <img width="1080" height="2400" alt="Screenshot_20251125_201238" src="https://github.com/user-attachments/assets/d37831ff-0cd4-449c-93e6-3715c28965b8" />
+
 #### (3)点击所有分类回到首页
 <img width="1080" height="2400" alt="Screenshot_20251125_201314" src="https://github.com/user-attachments/assets/df137251-ad1c-4f5f-8fb0-a41e0accd1ba" />
 
@@ -510,6 +511,7 @@ private void filterByCategory(String category) {
 <img width="1080" height="2400" alt="Screenshot_20251125_201739" src="https://github.com/user-attachments/assets/5017aed3-47c8-4de9-b69e-2efde6eeb424" />
 <img width="1080" height="2400" alt="Screenshot_20251125_201820" src="https://github.com/user-attachments/assets/5211eff0-a031-4869-bf5d-6f646f0e9d6c" />
 <img width="1080" height="2400" alt="Screenshot_20251125_201836" src="https://github.com/user-attachments/assets/e3510cac-baa8-4f51-bd3b-eeb734322e6f" />
+
 #### (6)点击所有分类
 <img width="1080" height="2400" alt="Screenshot_20251125_201911" src="https://github.com/user-attachments/assets/0f791114-5614-4ab5-91db-4d28163bbacf" />
 
