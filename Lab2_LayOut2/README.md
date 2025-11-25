@@ -48,6 +48,9 @@ Lab2_LayOut/
 
 - **布局文件**：activity_main.xml
 - **特点**：垂直或水平排列子视图
+  
+#### 界面结构
+<img width="581" height="445" alt="image" src="https://github.com/user-attachments/assets/e72ff214-1a54-4904-bd3e-b45ddb4ffeed" />
 
 #### 按下下方导航栏“界面一”按钮
 
@@ -56,6 +59,8 @@ Lab2_LayOut/
 
 - **布局文件**：activity_main2.xml
 - **特点**：表格形式排列，支持行列合并
+#### 界面结构
+<img width="1280" height="984" alt="image" src="https://github.com/user-attachments/assets/6a564cff-a2fd-4378-b609-4cc2f8b3ae40" />
 
 #### 按下下方导航栏“界面二”按钮
 
@@ -64,6 +69,8 @@ Lab2_LayOut/
 
 - **布局文件**：activity_main3.xml
 - **特点**：通过约束关系定位视图
+#### 界面结构
+<img width="1174" height="847" alt="image" src="https://github.com/user-attachments/assets/7a170f5c-8685-4016-aee3-1559df46bd3c" />
 
 #### 按下下方导航栏“界面三”按钮
 
@@ -72,6 +79,8 @@ Lab2_LayOut/
 
 - **布局文件**：activity_main4.xml
 - **特点**：复杂的约束关系，链式布局
+#### 界面结构
+<img width="1063" height="803" alt="image" src="https://github.com/user-attachments/assets/121d1fc6-eacc-4b3c-839f-39ea8bb75a55" />
 
 #### 按下下方导航栏“界面四”按钮
 
