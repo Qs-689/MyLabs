@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 基础应用主题 -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+    </style>
+
+    <!-- ActionBar样式 -->
+    <style name="ActionBarStyle" parent="android:Widget.Holo.Light.ActionBar">
+        <item name="android:titleTextStyle">@style/ActionBarTitle</item>
+        <item name="android:background">#2196F3</item>
+    </style>
+
+    <!-- ActionBar标题样式 -->
+    <style name="ActionBarTitle" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+</resources>
