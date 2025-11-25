@@ -43,7 +43,9 @@ Lab2_LayOut/
 
 #### 运行项目
 
-![image](https://github.com/Qs-689/MyLabs/blob/master/Lab2_LayOut2/lab2_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20162933.png)
+<img width="494" height="1016" alt="屏幕截图 2025-11-18 162933" src="https://github.com/user-attachments/assets/f527d850-3779-42a1-87e9-bd615f92089d" />
+
+
 ### 📏 线性布局 (MainActivity1)
 
 - **布局文件**：activity_main.xml
@@ -54,7 +56,9 @@ Lab2_LayOut/
 
 #### 按下下方导航栏“界面一”按钮
 
-![image](https://github.com/Qs-689/MyLabs/blob/master/Lab2_LayOut2/lab2_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20162933.png)
+<img width="494" height="1016" alt="屏幕截图 2025-11-18 162933" src="https://github.com/user-attachments/assets/1adb0356-97f5-40cd-b304-d751012479ca" />
+
+
 ### 📊 表格布局 (MainActivity2)
 
 - **布局文件**：activity_main2.xml
@@ -64,7 +68,8 @@ Lab2_LayOut/
 
 #### 按下下方导航栏“界面二”按钮
 
-![image](https://github.com/Qs-689/MyLabs/blob/master/Lab2_LayOut2/lab2_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20163112.png)
+<img width="515" height="1034" alt="屏幕截图 2025-11-18 163112" src="https://github.com/user-attachments/assets/8bb3ced0-4696-46b2-be0e-b643639cd720" />
+
 ### 🔗 约束布局1 (MainActivity3)
 
 - **布局文件**：activity_main3.xml
@@ -74,7 +79,8 @@ Lab2_LayOut/
 
 #### 按下下方导航栏“界面三”按钮
 
-![image](https://github.com/Qs-689/MyLabs/blob/master/Lab2_LayOut2/lab2_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20163129.png)
+<img width="503" height="1024" alt="屏幕截图 2025-11-18 163129" src="https://github.com/user-attachments/assets/f3870fdb-2ea3-40e2-808a-c0794b1860df" />
+
 ### 🔗 约束布局2 (MainActivity4)
 
 - **布局文件**：activity_main4.xml
@@ -84,7 +90,8 @@ Lab2_LayOut/
 
 #### 按下下方导航栏“界面四”按钮
 
-![image](https://github.com/Qs-689/MyLabs/blob/master/Lab2_LayOut2/lab2_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20163156.png)
+<img width="552" height="1102" alt="屏幕截图 2025-11-18 163156" src="https://github.com/user-attachments/assets/e730ce67-dfa2-4b11-9a26-12dfb5f33654" />
+
 ## ⚙️ 环境配置
 
 - **Android Studio**：推荐使用最新稳定版
