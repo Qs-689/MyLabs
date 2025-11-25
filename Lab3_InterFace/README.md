@@ -56,28 +56,39 @@ Lab3_InterFace/
 ### 任务一：ListView的实现
 
 ```Java
-// 使用SimpleAdapter创建列表
-SimpleAdapter adapter = new SimpleAdapter(this, data, 
-    R.layout.list_item, 
-    new String[]{"icon", "title", "subtitle"}, 
-    new int[]{R.id.ivIcon, R.id.tvTitle, R.id.tvSubtitle});
+private void setupListView() {
+        SimpleAdapter adapter = new SimpleAdapter(
+                this,
+                dataList,
+                R.layout.item_list,
+                new String[]{"name", "icon"},
+                new int[]{R.id.animal_name, R.id.animal_icon}
+        );
 
-listView.setAdapter(adapter);
+        listView.setAdapter(adapter);
 
-// 列表项点击事件
-listView.setOnItemClickListener((parent, view, position, id) -> {
-    String selectedItem = data.get(position).get("title");
-    Toast.makeText(this, "选中: " + selectedItem, Toast.LENGTH_SHORT).show();
-    
-    // 发送通知
-    sendNotification(selectedItem);
-});
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            // 重置上次选中的背景
+            if (lastSelectedView != null) {
+                lastSelectedView.setBackgroundColor(Color.TRANSPARENT);
+            }
+
+            // 设置当前选中项背景为红色
+            view.setBackgroundColor(Color.RED);
+            lastSelectedView = view;
+
+            String animalName = animalNames[position];
+            Toast.makeText(MainActivity.this, "选中了: " + animalName, Toast.LENGTH_SHORT).show();
+
+            // 显示弹窗通知
+            showAnimalDialog(animalName, position);
+        });
+    }
 ```
 #### 项目运行
 ![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20151955.png)
 
 #### 点击列表
-
 
 ![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20152330.png)
 
@@ -88,20 +99,34 @@ listView.setOnItemClickListener((parent, view, position, id) -> {
 
 ```Java
 // 加载自定义布局
-View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_custom, null);
+private void showCustomLoginDialog() {
+        // 创建AlertDialog构建器
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-AlertDialog.Builder builder = new AlertDialog.Builder(this);
-builder.setView(dialogView)
-       .setTitle("自定义对话框")
-       .setPositiveButton("确定", (dialog, which) -> {
-           // 处理确定按钮点击
-       })
-       .setNegativeButton("取消", (dialog, which) -> {
-           dialog.dismiss();
-       });
+        // 获取自定义布局
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_login, null);
 
-AlertDialog dialog = builder.create();
-dialog.show();
+        // 设置自定义视图
+        builder.setView(dialogView);
+
+        // 获取布局中的控件
+        final EditText etUsername = dialogView.findViewById(R.id.etUsername);
+        final EditText etPassword = dialogView.findViewById(R.id.etPassword);
+        Button btnCancel = dialogView.findViewById(R.id.btnCancel);
+        Button btnSignIn = dialogView.findViewById(R.id.btnSignIn);
+
+        // 创建对话框
+        loginDialog = builder.create();
+
+        // 设置Cancel按钮点击事件
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 关闭对话框，回到最初界面
+                loginDialog.dismiss();
+            }
+        });
 ```
 #### 项目运行
 
@@ -121,23 +146,62 @@ dialog.show();
 ### 任务三：XML菜单系统
 
 ```xml
-<!-- res/menu/main_menu.xml -->
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_font_size" android:title="字体大小">
-        <menu>
-            <item android:id="@+id/menu_font_small" android:title="小 (10号字)"/>
-            <item android:id="@+id/menu_font_medium" android:title="中 (16号字)"/>
-            <item android:id="@+id/menu_font_large" android:title="大 (20号字)"/>
-        </menu>
-    </item>
-    <item android:id="@+id/menu_normal" android:title="普通菜单项"/>
-    <item android:id="@+id/menu_font_color" android:title="字体颜色">
-        <menu>
-            <item android:id="@+id/menu_color_red" android:title="红色"/>
-            <item android:id="@+id/menu_color_black" android:title="黑色"/>
-        </menu>
-    </item>
-</menu>
+@Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // 根据当前设置更新菜单项的选中状态
+        MenuItem smallFont = menu.findItem(R.id.menu_font_small);
+        MenuItem mediumFont = menu.findItem(R.id.menu_font_medium);
+        MenuItem largeFont = menu.findItem(R.id.menu_font_large);
+        MenuItem redColor = menu.findItem(R.id.menu_color_red);
+        MenuItem blackColor = menu.findItem(R.id.menu_color_black);
+        MenuItem blueColor = menu.findItem(R.id.menu_color_blue);
+        MenuItem greenColor = menu.findItem(R.id.menu_color_green);
+        MenuItem purpleColor = menu.findItem(R.id.menu_color_purple);
+        MenuItem orangeColor = menu.findItem(R.id.menu_color_orange);
+
+        // 清除所有字体大小选项的选中状态
+        smallFont.setChecked(false);
+        mediumFont.setChecked(false);
+        largeFont.setChecked(false);
+
+        // 根据当前字体大小设置选中状态
+        switch (currentFontSize) {
+            case 10:
+                smallFont.setChecked(true);
+                break;
+            case 16:
+                mediumFont.setChecked(true);
+                break;
+            case 20:
+                largeFont.setChecked(true);
+                break;
+        }
+
+        // 清除所有颜色选项的选中状态
+        redColor.setChecked(false);
+        blackColor.setChecked(false);
+        blueColor.setChecked(false);
+        greenColor.setChecked(false);
+        purpleColor.setChecked(false);
+        orangeColor.setChecked(false);
+
+        // 使用预定义的常量进行switch判断
+        if (currentTextColor == Color.RED) {
+            redColor.setChecked(true);
+        } else if (currentTextColor == Color.BLACK) {
+            blackColor.setChecked(true);
+        } else if (currentTextColor == Color.BLUE) {
+            blueColor.setChecked(true);
+        } else if (currentTextColor == Color.GREEN) {
+            greenColor.setChecked(true);
+        } else if (currentTextColor == Color.parseColor("#800080")) {
+            purpleColor.setChecked(true);
+        } else if (currentTextColor == Color.parseColor("#FFA500")) {
+            orangeColor.setChecked(true);
+        }
+
+        return super.onPrepareOptionsMenu(menu);
+    }
 ```
 #### 运行项目
 
@@ -147,6 +211,13 @@ dialog.show();
 
 
 ![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-18%20161601.png)
+
+#### 点击字体大小菜单
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-25%20143134.png)
+
+#### 点击字体颜色菜单
+![image](https://github.com/Qs-689/MyLabs/blob/master/Lab3_InterFace/lab3_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-25%20143151.png)
+
 #### 调整字体
 
 
@@ -167,20 +238,88 @@ dialog.show();
 ### 任务四：ActionMode上下文菜单
 
 ```Java
-listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
-listView.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
-    @Override
-    public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-        mode.getMenuInflater().inflate(R.menu.context_menu, menu);
-        return true;
+@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // 初始化数据
+        initializeData();
+
+        // 初始化ListView和适配器
+        listView = findViewById(R.id.listView);
+        adapter = new CustomAdapter(this, dataList);
+        listView.setAdapter(adapter);
+
+        // 设置多选模式监听器
+        listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
+        listView.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
+
+            @Override
+            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
+                // 更新适配器状态
+                adapter.setSelected(position, checked);
+                updateActionModeTitle(mode);
+            }
+
+            @Override
+            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                mode.getMenuInflater().inflate(R.menu.context_menu, menu);
+                actionMode = mode;
+                adapter.setActionMode(true);
+                updateActionModeTitle(mode);
+                return true;
+            }
+
+            @Override
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                int id = item.getItemId();
+
+                if (id == R.id.menu_delete) {
+                    deleteSelectedItems();
+                    mode.finish();
+                    return true;
+                } else if (id == R.id.menu_share) {
+                    shareSelectedItems();
+                    return true;
+                } else if (id == R.id.menu_select_all) {
+                    selectAllItems();
+                    return true;
+                }
+
+                return false;
+            }
+
+            @Override
+            public void onDestroyActionMode(ActionMode mode) {
+                adapter.setActionMode(false);
+                actionMode = null;
+            }
+        });
+
+        // 修改点击监听器
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (actionMode != null) {
+                    // 在多选模式下，切换选择状态
+                    boolean newState = !adapter.isSelected(position);
+                    adapter.setSelected(position, newState);
+                    listView.setItemChecked(position, newState);
+                    updateActionModeTitle(actionMode);
+                } else {
+                    // 普通模式下显示项目内容
+                    Toast.makeText(MainActivity.this,
+                            "点击了: " + dataList.get(position), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
-    
-    @Override
-    public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-        // 处理菜单项点击
-        return true;
-    }
-});
 ```
 #### 运行项目
 
