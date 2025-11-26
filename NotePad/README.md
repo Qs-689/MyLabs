@@ -495,10 +495,8 @@ private void filterByCategory(String category) {
 #### (1)点击右上角菜单按钮并点击分类筛选
 ![retouch_2025112520091620(1)](https://github.com/user-attachments/assets/780f3026-1767-457d-9c8b-d3f3b5bf5664)
 #### (2)分别点击通用/工作/个人/想法
-<img width="1080" height="2400" alt="Screenshot_20251125_201146" src="https://github.com/user-attachments/assets/24649d22-f911-40bc-8b94-6e8f6adf7d4f" />
-<img width="1080" height="2400" alt="Screenshot_20251125_201205" src="https://github.com/user-attachments/assets/6ed3932d-d774-4cc2-bea5-5a3af6a438cd" />
-<img width="1080" height="2400" alt="Screenshot_20251125_201224" src="https://github.com/user-attachments/assets/981e3971-57c9-4f0c-91b8-3cc0ad613883" />
-<img width="1080" height="2400" alt="Screenshot_20251125_201238" src="https://github.com/user-attachments/assets/d37831ff-0cd4-449c-93e6-3715c28965b8" />
+![retouch_2025112611235373](https://github.com/user-attachments/assets/070d6900-b606-4a0a-b1a3-c0f08abe6b45)
+
 
 #### (3)点击所有分类回到首页
 <img width="1080" height="2400" alt="Screenshot_20251125_201314" src="https://github.com/user-attachments/assets/df137251-ad1c-4f5f-8fb0-a41e0accd1ba" />
@@ -506,10 +504,8 @@ private void filterByCategory(String category) {
 #### (4)点击右上角搜索按钮并点击分类筛选
 ![retouch_2025112520154286(1)](https://github.com/user-attachments/assets/bade7967-c17d-4103-a78f-c0b1549475d3)
 #### (5)分别点击通用/工作/个人/想法
-<img width="1080" height="2400" alt="Screenshot_20251125_201720" src="https://github.com/user-attachments/assets/52b41fef-ab0c-42b1-9d32-4f834150830f" />
-<img width="1080" height="2400" alt="Screenshot_20251125_201739" src="https://github.com/user-attachments/assets/5017aed3-47c8-4de9-b69e-2efde6eeb424" />
-<img width="1080" height="2400" alt="Screenshot_20251125_201820" src="https://github.com/user-attachments/assets/5211eff0-a031-4869-bf5d-6f646f0e9d6c" />
-<img width="1080" height="2400" alt="Screenshot_20251125_201836" src="https://github.com/user-attachments/assets/e3510cac-baa8-4f51-bd3b-eeb734322e6f" />
+![retouch_2025112611240876](https://github.com/user-attachments/assets/cfbeb8f9-f179-4199-b818-01f3a5a4dc3f)
+
 
 #### (6)点击所有分类
 <img width="1080" height="2400" alt="Screenshot_20251125_201911" src="https://github.com/user-attachments/assets/0f791114-5614-4ab5-91db-4d28163bbacf" />
@@ -902,6 +898,10 @@ public class NotesList extends ListActivity {
 
 #### 4.1.1 浅色主题搜索效果
 <img width="1080" height="2400" alt="Screenshot_20251126_105327" src="https://github.com/user-attachments/assets/8a088d43-be3e-4f27-9137-a90f1b2eada8" />
+
+#### 4.1.2 主题切换
+![retouch_2025112611292314(1)](https://github.com/user-attachments/assets/0903aa87-acc5-4211-bf7a-838a73b39d8c)
+
 
 #### 4.2 深色主题效果
 <img width="1080" height="2400" alt="Screenshot_20251126_105155" src="https://github.com/user-attachments/assets/97952ddb-35b3-4e04-86a0-9866bb2a543b" />
