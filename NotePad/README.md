@@ -15,7 +15,6 @@
 
 ### 3. 技术实现
 #### (1) 布局文件修改 - noteslist_item.xml
-xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout"
     android:layout_width="match_parent"
@@ -517,6 +516,413 @@ private void filterByCategory(String category) {
 
 #### (7)编写/修改笔记时选择分类
 ![retouch_2025112520274511(1)(1)](https://github.com/user-attachments/assets/e91d6116-0339-4b9c-b555-6634f0584c30)
+
+## （四）UI美化：主题切换与界面优化
+### 1. 功能要求
+- 实现浅色和深色双主题切换功能
+
+- 优化笔记列表和编辑界面的视觉效果
+
+- 提供一致的颜色方案和字体设置
+
+- 改善用户交互体验和视觉层次
+
+### 2. 实现思路
+#### 2.1 主题系统设计
+- 定义两套完整的主题配色方案
+
+- 使用SharedPreferences持久化用户主题选择
+
+- 实现实时主题切换无需重启应用
+
+#### 2.2 视觉设计优化
+- 采用Material Design设计语言
+
+- 统一配色方案和间距系统
+
+- 优化字体大小和行高设置
+
+#### 2.3 交互体验提升
+- 平滑的主题切换动画
+
+- 直观的视觉反馈
+
+- 一致的操作体验
+
+### 3. 技术实现
+#### 3.1 主题资源定义 - res/values/styles.xml
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 浅色主题 -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+        <item name="android:windowBackground">@color/background_light</item>
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="android:textColorPrimary">@color/text_primary_light</item>
+        <item name="android:textColorSecondary">@color/text_secondary_light</item>
+        <item name="android:actionBarStyle">@style/ActionBarStyle.Light</item>
+        <item name="android:listViewStyle">@style/ListViewStyle.Light</item>
+    </style>
+
+    <!-- 深色主题 -->
+    <style name="AppTheme.Dark" parent="android:Theme.Holo">
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="android:textColorPrimary">@color/text_primary_dark</item>
+        <item name="android:textColorSecondary">@color/text_secondary_dark</item>
+        <item name="android:actionBarStyle">@style/ActionBarStyle.Dark</item>
+        <item name="android:listViewStyle">@style/ListViewStyle.Dark</item>
+    </style>
+
+    <!-- ActionBar样式 -->
+    <style name="ActionBarStyle.Light" parent="android:Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/primary_color</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitleStyle.Light</item>
+    </style>
+
+    <style name="ActionBarStyle.Dark" parent="android:Widget.Holo.ActionBar">
+        <item name="android:background">@color/primary_dark</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitleStyle.Dark</item>
+    </style>
+
+    <!-- ActionBar标题样式 -->
+    <style name="ActionBarTitleStyle.Light" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ActionBarTitleStyle.Dark" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
+```
+
+#### 3.2 颜色资源定义 - res/values/colors.xml
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主色调 -->
+    <color name="primary_color">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="accent_color">#FF4081</color>
+
+    <!-- 浅色主题颜色 -->
+    <color name="background_light">#FAFAFA</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="text_primary_light">#212121</color>
+    <color name="text_secondary_light">#757575</color>
+    <color name="divider_light">#E0E0E0</color>
+
+    <!-- 深色主题颜色 -->
+    <color name="background_dark">#121212</color>
+    <color name="surface_dark">#1E1E1E</color>
+    <color name="text_primary_dark">#E0E0E0</color>
+    <color name="text_secondary_dark">#A0A0A0</color>
+    <color name="divider_dark">#373737</color>
+</resources>
+``` 
+
+#### 3.3 尺寸资源定义 - res/values/dimens.xml
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 间距系统 -->
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+
+    <!-- 圆角半径 -->
+    <dimen name="corner_radius_small">4dp</dimen>
+    <dimen name="corner_radius_medium">8dp</dimen>
+    <dimen name="corner_radius_large">12dp</dimen>
+
+    <!-- 高程阴影 -->
+    <dimen name="elevation_small">2dp</dimen>
+    <dimen name="elevation_medium">4dp</dimen>
+    <dimen name="elevation_large">8dp</dimen>
+</resources>
+``` 
+
+#### 3.4 主题管理类 - ThemeManager.java
+```java
+public class ThemeManager {
+    private static final String PREF_THEME = "app_theme";
+    private static final String THEME_LIGHT = "light";
+    private static final String THEME_DARK = "dark";
+    
+    private SharedPreferences preferences;
+    
+    public ThemeManager(Context context) {
+        preferences = context.getSharedPreferences("app_preferences", Context.MODE_PRIVATE);
+    }
+    
+    public void setTheme(String theme) {
+        preferences.edit().putString(PREF_THEME, theme).apply();
+    }
+    
+    public String getCurrentTheme() {
+        return preferences.getString(PREF_THEME, THEME_LIGHT);
+    }
+    
+    public void toggleTheme() {
+        if (getCurrentTheme().equals(THEME_LIGHT)) {
+            setTheme(THEME_DARK);
+        } else {
+            setTheme(THEME_LIGHT);
+        }
+    }
+    
+    public int getThemeResource() {
+        return getCurrentTheme().equals(THEME_DARK) ? 
+            R.style.AppTheme_Dark : R.style.AppTheme;
+    }
+}
+```
+
+#### 3.5 笔记列表布局优化 - noteslist_item.xml
+```java
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/list_item_background"
+    android:padding="@dimen/padding_medium"
+    android:layout_margin="@dimen/padding_small">
+
+    <!-- 标题行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@android:id/text1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:ellipsize="end" />
+
+        <!-- 分类标签 -->
+        <TextView
+            android:id="@+id/text_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:background="@drawable/category_tag_background"
+            android:padding="@dimen/padding_small"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <!-- 时间戳 -->
+    <TextView
+        android:id="@+id/text1_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="?android:attr/textColorSecondary"
+        android:singleLine="true" />
+
+</LinearLayout>
+```
+
+#### 3.6 列表项背景选择器 - res/drawable/list_item_background.xml
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="?android:attr/colorControlHighlight" />
+            <corners android:radius="@dimen/corner_radius_small" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="?android:attr/colorBackground" />
+            <stroke android:width="1dp" android:color="?android:attr/colorForeground" android:alpha="0.1" />
+            <corners android:radius="@dimen/corner_radius_small" />
+        </shape>
+    </item>
+</selector>
+ ``` 
+                
+#### 3.7 分类标签背景 - res/drawable/category_tag_background.xml
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/primary_color" />
+    <corners android:radius="12dp" />
+</shape>
+```
+
+#### 3.8 笔记编辑界面优化 - note_editor.xml
+```java
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground">
+
+    <!-- 标题编辑区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_medium"
+        android:background="?android:attr/colorBackground">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="标题:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary" />
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:hint="输入笔记标题"
+            android:textSize="16sp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="?android:attr/textColorPrimary"
+            android:background="@drawable/edit_text_background" />
+
+    </LinearLinearLayout>
+
+    <!-- 内容编辑区域 -->
+    <com.example.android.notepad.NoteEditor.LinedEditText
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="?android:attr/colorBackground"
+        android:padding="@dimen/padding_medium"
+        android:gravity="top"
+        android:textSize="18sp"
+        android:textColor="?android:attr/textColorPrimary"
+        android:hint="开始输入笔记内容..."
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical" />
+
+</LinearLayout>
+```
+
+#### 3.9 编辑框背景 - res/drawable/edit_text_background.xml
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="?android:attr/colorBackground" />
+    <stroke android:width="1dp" android:color="?android:attr/colorForeground" android:alpha="0.2" />
+    <corners android:radius="@dimen/corner_radius_small" />
+</shape>
+```
+     
+#### 3.10 主题切换实现 - NotesList.java
+```java
+public class NotesList extends ListActivity {
+    private ThemeManager themeManager;
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        // 应用主题（必须在super.onCreate之前）
+        themeManager = new ThemeManager(this);
+        setTheme(themeManager.getThemeResource());
+        
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.notes_list);
+        
+        // 应用界面样式
+        applyUIStyles();
+    }
+    
+    private void applyUIStyles() {
+        // 设置列表样式
+        getListView().setDivider(getResources().getDrawable(android.R.color.transparent));
+        getListView().setDividerHeight(0);
+        
+        // 设置滚动条样式
+        getListView().setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        
+        // 添加主题切换菜单项
+        MenuItem themeItem = menu.add(Menu.NONE, 1001, Menu.NONE,
+            themeManager.getCurrentTheme().equals("light") ? 
+            "🌙 切换到深色模式" : "☀️ 切换到浅色模式");
+        themeItem.setIcon(android.R.drawable.ic_menu_preferences);
+        themeItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        
+        return true;
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == 1001) {
+            // 切换主题
+            themeManager.toggleTheme();
+            
+            // 显示提示
+            Toast.makeText(this, 
+                themeManager.getCurrentTheme().equals("light") ? 
+                "已切换到浅色模式" : "已切换到深色模式", 
+                Toast.LENGTH_SHORT).show();
+            
+            // 重新创建Activity应用新主题
+            recreate();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}
+```
+
+### 4. 实现效果界面截图
+#### 4.1 浅色主题效果
+<img width="1080" height="2400" alt="Screenshot_20251126_105212" src="https://github.com/user-attachments/assets/2fa98ba1-7ba4-461d-946f-52a99d50ed1b" />
+
+#### 4.1.1 浅色主题搜索效果
+<img width="1080" height="2400" alt="Screenshot_20251126_105327" src="https://github.com/user-attachments/assets/8a088d43-be3e-4f27-9137-a90f1b2eada8" />
+
+#### 4.2 深色主题效果
+<img width="1080" height="2400" alt="Screenshot_20251126_105155" src="https://github.com/user-attachments/assets/97952ddb-35b3-4e04-86a0-9866bb2a543b" />
+
+#### 4.2.1 深色主题搜索效果
+<img width="1080" height="2400" alt="Screenshot_20251126_105413" src="https://github.com/user-attachments/assets/41c827cd-d5c9-4b9c-86e7-2b2972472ec5" />
+
+#### 4.3 编辑笔记调整字体效果
+![retouch_2025112611005645(1)](https://github.com/user-attachments/assets/50475f04-6f85-4cae-af4f-0d1cbb375221)
+
+#### 4.3.1 分别点击大/中/小号字体
+![retouch_2025112611032444(1)](https://github.com/user-attachments/assets/fda10e3a-3249-4a83-ac1e-ec5d46e6ce6b)
+
+#### 4.4 美化前后对比
+![retouch_2025112611142380](https://github.com/user-attachments/assets/67474203-c626-4e25-a3c6-8bbea3446b96)
+
+
+
+
+
+
 
 
 
