@@ -34,14 +34,19 @@
         android:layout_height="1dp"
         android:background="#dddddd" />
 
-    <!-- 内容区域 -->
-    <view
+    <!-- 内容编辑区域 -->
+    <EditText
         android:id="@+id/note"
-        class="com.example.android.notepad.NoteEditor$LinedEditText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@android:color/transparent"
-        android:padding="5dp"
-        android:scrollbars="vertical" />
+        android:padding="@dimen/padding_medium"
+        android:scrollbars="vertical"
+        android:gravity="top"
+        android:textSize="18sp"
+        android:textColor="?android:attr/textColorPrimary"
+         />
+
 
 </LinearLayout>

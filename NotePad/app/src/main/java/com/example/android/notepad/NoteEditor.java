@@ -19,28 +19,34 @@ package com.example.android.notepad;
 import static com.example.android.notepad.R.*;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * This Activity handles "editing" a note, where editing is responding to
@@ -163,10 +169,28 @@ public class NoteEditor extends Activity {
         // ✅ 第二步：然后初始化视图
         initializeViews();
 
+        applyEditorStyle();
+
         // ✅ 第三步：处理Intent和数据
         handleIntentAndData(savedInstanceState);
     }
+    /**
+     * 应用编辑器样式
+     */
+    private void applyEditorStyle() {
+        // 设置字体
+        mText.setTypeface(Typeface.MONOSPACE);
 
+        // 设置行间距
+        mText.setLineSpacing(0, 1.2f);
+
+        // 设置内边距
+        int padding = getResources().getDimensionPixelSize(R.dimen.padding_medium);
+        mText.setPadding(padding, padding, padding, padding);
+
+        // 设置滚动条样式
+        mText.setScrollBarStyle(View.SCROLLBARS_INSIDE_INSET);
+    }
     /**
      * 初始化所有视图
      */
@@ -452,7 +476,11 @@ public class NoteEditor extends Activity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.editor_options_menu, menu);
 
-        // Only add extra menu items for a saved note 
+        // 添加字体大小调整菜单
+        MenuItem fontSizeItem = menu.add(Menu.NONE, Menu.FIRST + 30, Menu.NONE, "字体大小");
+        fontSizeItem.setIcon(android.R.drawable.ic_menu_edit);
+
+        // Only add extra menu items for a saved note
         if (mState == STATE_EDIT) {
             // Append to the
             // menu items for any other activities that can do stuff with it
@@ -539,8 +567,40 @@ public class NoteEditor extends Activity {
             finish();
         } else if (id == R.id.menu_revert) {
             cancelNote();
+        }else if (id == Menu.FIRST + 30) { // 字体大小调整
+            showFontSizeDialog();
+            return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    /**
+     * 显示字体大小对话框
+     */
+    private void showFontSizeDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("选择字体大小");
+
+        final String[] sizes = {"小号", "中号", "大号"};
+
+        builder.setItems(sizes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case 0: setFontSize(14); break;
+                    case 1: setFontSize(16); break;
+                    case 2: setFontSize(18); break;
+                }
+            }
+        });
+
+        builder.show();
+    }
+    /**
+     * 设置字体大小
+     */
+    private void setFontSize(int size) {
+        mText.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
+        Toast.makeText(this, "字体大小已设置为: " + size + "sp", Toast.LENGTH_SHORT).show();
     }
 
 //BEGIN_INCLUDE(paste)

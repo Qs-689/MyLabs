@@ -27,7 +27,10 @@ import android.content.ContentUris;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -70,6 +73,7 @@ public class NotesList extends ListActivity {
     // 添加搜索状态变量
     private String mCurrentSearchQuery = null;
     private String mCurrentCategoryFilter = null;
+    private String mCurrentTheme = "light";
 
     /**
      * The columns needed by the cursor adapter
@@ -96,6 +100,9 @@ public class NotesList extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // 应用当前主题
+        applyTheme();
+
         // The user does not need to hold down the key to use menu shortcuts.
         setDefaultKeyMode(DEFAULT_KEYS_SHORTCUT);
 
@@ -118,10 +125,26 @@ public class NotesList extends ListActivity {
          * to be this Activity. The effect is that context menus are enabled for items in the
          * ListView,极速快3.
          */
-        getListView().setOnCreateContextMenuListener(this);
+        // 设置列表分割线
+        getListView().setDivider(getResources().getDrawable(android.R.color.darker_gray));
+        getListView().setDividerHeight(1);
 
         // 加载数据
         loadData();
+    }
+    /**
+     * 应用主题
+     */
+    private void applyTheme() {
+        // 从SharedPreferences读取保存的主题设置
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        mCurrentTheme = prefs.getString("theme", "light");
+
+        if (mCurrentTheme.equals("dark")) {
+            setTheme(R.style.AppTheme_Dark);
+        } else {
+            setTheme(R.style.AppTheme);
+        }
     }
 
     /**
@@ -208,6 +231,13 @@ public class NotesList extends ListActivity {
                     long timestamp = cursor.getLong(columnIndex);
                     String formattedTime = formatTimestamp(timestamp);
                     textView.setText(formattedTime);
+                    // 根据主题设置文字颜色
+                    if (mCurrentTheme.equals("dark")) {
+                        textView.setTextColor(getResources().getColor(R.color.text_secondary_dark));
+                    } else {
+                        textView.setTextColor(getResources().getColor(R.color.text_secondary_light));
+                    }
+
                     return true;
                 } else if (columnIndex == COLUMN_INDEX_CATEGORY) {
                     // 处理分类显示
@@ -229,9 +259,18 @@ public class NotesList extends ListActivity {
         String displayName = getCategoryDisplayName(category);
         textView.setText(displayName);
 
-        // 设置分类颜色
+        // 根据主题设置分类标签样式
         int color = getCategoryColor(category);
         textView.setBackgroundColor(color);
+        textView.setTextColor(Color.WHITE);
+        textView.setPadding(8, 4, 8, 4);
+
+        // 设置圆角
+        GradientDrawable shape = new GradientDrawable();
+        shape.setShape(GradientDrawable.RECTANGLE);
+        shape.setCornerRadius(12);
+        shape.setColor(color);
+        textView.setBackground(shape);
     }
     private int getCategoryColor(String category) {
         if (category == null) return 0xFF757575; // 默认灰色
@@ -288,6 +327,15 @@ public class NotesList extends ListActivity {
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.list_options_menu, menu);
+
+
+        // 添加主题切换菜单项
+        MenuItem themeItem = menu.add(Menu.NONE, Menu.FIRST + 20, Menu.NONE,
+                mCurrentTheme.equals("light") ? "🌙 切换到深色模式" : "☀️ 切换到浅色模式");
+        themeItem.setIcon(mCurrentTheme.equals("light") ?
+                android.R.drawable.ic_menu_my_calendar : // 月亮图标
+                android.R.drawable.ic_menu_day           // 太阳图标
+        );
 
         // 添加搜索功能
         MenuItem searchItem = menu.findItem(R.id.menu_search);
@@ -461,6 +509,9 @@ public class NotesList extends ListActivity {
             return true;
         }else if (item.getItemId()  == R.id.menu_filter) { // 分类筛选菜单
             showCategoryFilterDialog();
+            return true;
+        }else if (item.getItemId() == Menu.FIRST + 20) { // 主题切换
+            toggleTheme();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -696,6 +747,32 @@ public class NotesList extends ListActivity {
             return true;
         }
         return super.onContextItemSelected(item);
+    }
+    /**
+     * 切换主题
+     */
+    private void toggleTheme() {
+        SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        if (mCurrentTheme.equals("light")) {
+            mCurrentTheme = "dark";
+            editor.putString("theme", "dark");
+            Toast.makeText(this, "🌙 已切换到深色模式", Toast.LENGTH_SHORT).show();
+        } else {
+            mCurrentTheme = "light";
+            editor.putString("theme", "light");
+            Toast.makeText(this, "☀️ 已切换到浅色模式", Toast.LENGTH_SHORT).show();
+        }
+
+        editor.commit();
+
+        // 使用更平滑的切换方式
+        Intent intent = getIntent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        finish();
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     /**

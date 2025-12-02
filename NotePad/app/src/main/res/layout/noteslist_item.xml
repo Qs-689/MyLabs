@@ -3,24 +3,32 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:background="@drawable/list_item_background"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp"
+    android:minHeight="72dp">
 
-    <!-- 第一行：标题 -->
+    <!-- 标题行 -->
     <TextView
         android:id="@android:id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="?android:attr/textColorPrimary"
         android:textStyle="bold"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:ellipsize="end" />
 
-    <!-- 第二行：时间戳和分类 -->
+    <!-- 第二行：时间和分类 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp">
 
-        <!-- 时间戳 -->
+        <!-- 时间 -->
         <TextView
             android:id="@android:id/text2"
             android:layout_width="0dp"
@@ -39,6 +47,7 @@
             android:background="@drawable/category_background"
             android:padding="6dp"
             android:textColor="#FFFFFF"
+            android:textSize="12sp"
             android:singleLine="true" />
 
     </LinearLayout>
